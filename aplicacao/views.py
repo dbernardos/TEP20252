@@ -52,6 +52,9 @@ def atualizar_produto(request, id):
         prod.save()
     return redirect('url_produto')
 
-def apagar_produto(request):
-    pass
+def apagar_produto(request, id):
+    prod = get_object_or_404(Produto, id=id)
+    prod.delete()
+    return redirect('url_produto')
+
 
