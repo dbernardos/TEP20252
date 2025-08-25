@@ -8,15 +8,15 @@
     {% bootstrap_css %}
 </head>
 <body>
-    <h1>Cadastro de produtos</h1>
+    <h1>Atualização de produtos</h1>
     
-    <form action="{% url 'url_cad_produto' %}" method="POST">
+    <form action="{% url 'url_atualizar_produto' prod.id %}" method="POST">
         {% csrf_token %}
-        <input type="text" name="nome" placeholder="Digite o nome..." class="form-control" required>
+        <input type="text" name="nome" value="{{ prod.nome}}" class="form-control" required>
         <br>
-        <input type="text" name="preco" placeholder="Digite o preço..." class="form-control" required>
+        <input type="text" name="preco" value="{{ prod.preco}}" class="form-control" required>
         <br>
-        <input type="text" name="qtde" placeholder="Digite a quantidade..." class="form-control" required>
+        <input type="text" name="qtde" value="{{ prod.qtde}}" class="form-control" required>
         <br>
         <input type="submit" name="btnSalvar" value="Salvar" class="btn btn-success">
     </form>
