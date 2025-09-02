@@ -1,5 +1,4 @@
 from django.db import models
-from phone_field import PhoneField 
 
 class Produto(models.Model):
     nome = models.CharField("Nome", max_length=200, null = True)

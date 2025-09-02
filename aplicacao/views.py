@@ -113,7 +113,8 @@ def cad_cliente(request):
             perfil.cliente = cliente
             perfil.save()
     
-    form = ClienteForm()
+    form_cliente = ClienteForm()
+    form_perfil = PerfilForm()
     context = {
         'form_cliente': form_cliente,
         'form_perfil': form_perfil
